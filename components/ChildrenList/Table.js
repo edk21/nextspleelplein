@@ -1,12 +1,13 @@
 import { IoIosTrash, IoIosCreate } from 'react-icons/io';
-import { useEffect, useState } from "react";
-import ReactHTMLTableToExcel from 'react-html-table-to-excel';
+import { useEffect, useState, useRef } from "react";
+import { useDownloadExcel } from 'react-export-table-to-excel';
 import { thead } from "./TheadData";
 import Link from "next/link";
 import { useRouter } from 'next/router';
 import Spinner from '../Spinner/Spinner';
 
 const Table = ({ data }) => {
+    const tableRef = useRef(null);
     const router = useRouter()
     const [query, setQuery] = useState("")
 
@@ -22,6 +23,12 @@ const Table = ({ data }) => {
             console.log(error)
         }
     }
+
+    const { onDownload } = useDownloadExcel({
+        currentTableRef: tableRef.current,
+        filename: 'Children table',
+        sheet: 'Children'
+    })
 
     if(data.length === 0){
         return <Spinner />
@@ -44,18 +51,12 @@ const Table = ({ data }) => {
                 </div>
 
                 <div className='to-excel w-full laptop:w-1/3 px-3 mb-6 laptop:mb-0'>
-                    <ReactHTMLTableToExcel
-                        className='bg-blue-700 hover:bg-blue-400 rounded px-4 py-2 text-white'
-                        table='emp-table'
-                        filename='Emp Excel file'
-                        sheet='Sheet'
-                        buttonText='Exporteren naar Excel'
-                    />
+                    <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-6 laptop:mb-0 cursor-pointer' onClick={onDownload}> Export to excel </button>
                 </div>
             </div>
             <div className="w-full mb-12 p-2 sticky top-0">
             <div className="w-full ml-0 overflow-x-auto sm:rounded-lg max-h-[900px]">
-            <table id='emp-table' className='min-w-full h-auto table-auto overflow-x-auto text-left'>
+            <table ref={tableRef} id='emp-table' className='min-w-full h-auto table-auto overflow-x-auto text-left'>
                 <thead className="text-md text-gray-700 sticky top-0">
                     <tr className='bg-gray-800'>
                         {thead.map((item, index) => (

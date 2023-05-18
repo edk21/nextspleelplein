@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
 import { IoIosTrash, IoIosCreate } from 'react-icons/io';
-import ReactHTMLTableToExcel from 'react-html-table-to-excel';
+import { useDownloadExcel } from 'react-export-table-to-excel';
 
 const StatsData = ({ data }) => {
     const [childs, setChild] = useState([]);
@@ -50,6 +50,12 @@ const StatsData = ({ data }) => {
         setFilteredData(result);
       };
 
+      const { onDownload } = useDownloadExcel({
+        currentTableRef: tableRef.current,
+        filename: 'Children StatData',
+        sheet: 'Children Stat'
+    })
+
     useEffect(() => {
         setChild(data);
         setFilteredData(data);
@@ -76,14 +82,8 @@ const StatsData = ({ data }) => {
           />
         </div>
         <div className='to-excel w-full laptop:w-1/3 px-3 mb-6 laptop:mb-0'>
-        <ReactHTMLTableToExcel
-          className='bg-blue-700 hover:bg-blue-400 rounded px-4 py-2 text-white'
-          table='emp-table'
-          filename='Emp Excel file'
-          sheet='Sheet'
-          buttonText='Exporteren naar Excel'
-        />
-      </div>
+          <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-6 laptop:mb-0 cursor-pointer' onClick={onDownload}> Export to excel </button>
+        </div>
       </div>
 
       <div className="w-full mb-12 relative">
