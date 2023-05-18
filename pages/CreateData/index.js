@@ -67,7 +67,7 @@ export default function CreateData() {
 
     const createData = async (newChild) => {
       try {
-        await fetch('http://localhost:3001/api/children', {
+        await fetch('http://localhost:3000/api/children', {
           method: 'POST',
           headers: {
             "Content-Type": "application/json"
@@ -81,7 +81,7 @@ export default function CreateData() {
 
     const createStat = async (newStat) => {
       try {
-        await fetch('http://localhost:3001/api/stats', {
+        await fetch('http://localhost:3000/api/stats', {
           method: 'POST',
           headers: {
             "Content-Type": "application/json"

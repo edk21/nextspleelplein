@@ -175,7 +175,7 @@ export default memo(LegalStatsTable)
 
 export async function getServerSideProps(context) {
 
-    const response = await fetch('http://localhost:3001/api/children')
+    const response = await fetch('http://localhost:3000/api/children')
     const data = await response.json()
   
     return {
