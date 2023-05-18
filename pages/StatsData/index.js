@@ -1,9 +1,10 @@
 import Link from 'next/link';
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { IoIosTrash, IoIosCreate } from 'react-icons/io';
 import { useDownloadExcel } from 'react-export-table-to-excel';
 
 const StatsData = ({ data }) => {
+  const tableRef = useRef(null);
     const [childs, setChild] = useState([]);
     const [filteredData, setFilteredData] = useState(childs);
 
