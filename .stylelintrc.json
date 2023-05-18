@@ -1,0 +1,65 @@
+{
+    "plugins": [
+      "stylelint-order",
+      "stylelint-scss"
+    ],
+    "extends": [
+      "stylelint-config-standard-scss",
+      "stylelint-config-prettier-scss"
+    ],
+    "rules": {
+      "string-quotes": "single",
+      "order/order": [
+        "custom-properties",
+        "dollar-variables",
+        {
+          "type": "at-rule",
+          "name": "extend"
+        },
+        "declarations",
+        "at-rules",
+        "rules"
+      ],
+      "selector-pseudo-class-no-unknown": [
+        true,
+        {
+          "ignorePseudoClasses": [
+            "global"
+          ]
+        }
+      ],
+      "selector-pseudo-class-case": "lower",
+      "number-leading-zero": "never",
+      "scss/dollar-variable-pattern": "^([a-z][a-zA-Z0-9]*)((_|-)[-_a-zA-Z0-9]+)*$",
+      "selector-class-pattern": "^([-a-z][a-zA-Z0-9]*)((_|-)[-_a-zA-Z0-9]+)*$",
+      "selector-id-pattern": "^([-a-z][a-zA-Z0-9]*)((_|-)[-_a-zA-Z0-9]+)*$",
+      "scss/percent-placeholder-pattern": "^([-a-zA-Z][a-zA-Z0-9]*)((_|-)[-_a-zA-Z0-9]+)*$",
+      "scss/comment-no-empty": null,
+      "value-keyword-case": "lower",
+      "no-descending-specificity": null,
+      "property-case": "lower",
+      "order/properties-alphabetical-order": true,
+      "max-nesting-depth": 5,
+      "color-named": [
+        "never",
+        {
+          "ignore": [
+            "inside-function"
+          ]
+        }
+      ],
+      "color-function-notation": "legacy",
+      "color-no-hex": true,
+      "indentation": 4,
+      "selector-max-id": 1,
+      "selector-max-universal": 1,
+      "block-no-empty": null,
+      "number-max-precision": [
+        4,
+        {
+          "severity": "warning"
+        }
+      ]
+    }
+  }
+  

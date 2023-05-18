@@ -1,0 +1,28 @@
+{
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true,
+      "source.fixAll.stylelint": true
+    },
+    "editor.formatOnSave": true,
+    "[javascript]": {
+      "editor.formatOnSave": false
+    },
+    "[javascriptreact]": {
+      "editor.formatOnSave": false
+    },
+    "eslint.validate": [
+      "javascript",
+      "react"
+    ],
+    "[scss]": {
+      "editor.defaultFormatter": "stylelint.vscode-stylelint"
+    },
+    "scss.lint.emptyRules": "ignore",
+    "stylelint.validate": [
+      "css",
+      "less",
+      "postcss",
+      "scss"
+    ],
+  }
+  
