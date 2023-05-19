@@ -175,7 +175,8 @@ export default function EditData({ data, error }) {
 
   const updateData = async ( Obj ) => {
     try {
-      await fetch(`http://localhost:3000/api/children/${query.id}`, {
+      //await fetch(`http://localhost:3000/api/children/${query.id}`, {
+      await fetch(`https://myspeelplein.netlify.app/api/children/${query.id}`, {
         method: 'PUT',
         headers: {
           "Content-Type": "application/json"
@@ -190,7 +191,8 @@ export default function EditData({ data, error }) {
   const createStat = async (newStat) => {
     console.log("newStat: ", newStat)
     try {
-      await fetch('http://localhost:3000/api/stats', {
+      //await fetch('http://localhost:3000/api/stats', {
+      await fetch('https://myspeelplein.netlify.app/api/stats', {
         method: 'POST',
         headers: {
           "Content-Type": "application/json"
@@ -739,7 +741,8 @@ export default function EditData({ data, error }) {
 
 export async function getServerSideProps({ query: {id} }) {
 
-  const response = await fetch(`http://localhost:3000/api/children/${id}`)
+  //const response = await fetch(`http://localhost:3000/api/children/${id}`)
+  const response = await fetch(`https://myspeelplein.netlify.app/api/children/${id}`)
 
   if(response.status === 200) {
     const data = await response.json()

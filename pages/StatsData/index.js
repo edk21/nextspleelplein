@@ -11,7 +11,8 @@ const StatsData = ({ data }) => {
     const handleDelete = async (id) => {
         try {
             if (window.confirm('Weet je zeker dat je wilt verwijderen?')){
-                await fetch(`http://localhost:3000/api/stats/${id}`, {
+                //await fetch(`http://localhost:3000/api/stats/${id}`, {
+                await fetch(`https://myspeelplein.netlify.app/api/stats/${id}`, {
                     method: "DELETE"
                 })
             }
@@ -22,7 +23,8 @@ const StatsData = ({ data }) => {
     const handleDeleteAll = async () => {
         try {
             if (window.confirm('Weet je zeker dat je wilt verwijderen?')){
-                await fetch(`http://localhost:3000/api/stats`, {
+                //await fetch(`http://localhost:3000/api/stats`, {
+                await fetch(`https://myspeelplein.netlify.app/api/stats`, {
                     method: "DELETE"
                 })
             }
@@ -142,7 +144,8 @@ export default StatsData
 
 export async function getServerSideProps(context) {
 
-    const response = await fetch('http://localhost:3000/api/stats')
+    //const response = await fetch('http://localhost:3000/api/stats')
+    const response = await fetch('https://myspeelplein.netlify.app/api/stats')
     const data = await response.json()
   
     return {

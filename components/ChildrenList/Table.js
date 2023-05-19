@@ -14,7 +14,8 @@ const Table = ({ data }) => {
     const handleDelete = async (id) => {
         try {
             if (window.confirm('Weet je zeker dat je wilt verwijderen?')){
-                await fetch(`http://localhost:3000/api/children/${id}`, {
+               // await fetch(`http://localhost:3000/api/children/${id}`, {
+                await fetch(`https://myspeelplein.netlify.app/api/children/${id}`, {
                     method: "DELETE"
                 })
             }
