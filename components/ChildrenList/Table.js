@@ -15,7 +15,7 @@ const Table = ({ data }) => {
         try {
             if (window.confirm('Weet je zeker dat je wilt verwijderen?')){
                // await fetch(`http://localhost:3000/api/children/${id}`, {
-                await fetch(`https://myspeelplein.netlify.app/api/children/${id}`, {
+                await fetch(`https://nextspleelplein.vercel.app/api/children/${id}`, {
                     method: "DELETE"
                 })
             }

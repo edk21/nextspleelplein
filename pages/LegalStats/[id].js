@@ -601,7 +601,7 @@ export default memo(LegalStats)
 export async function getServerSideProps({ query: {id} }) {
 
   //const response = await fetch(`http://localhost:3000/api/children/${id}`)
-  const response = await fetch(`https://myspeelplein.netlify.app/api/children/${id}`)
+  const response = await fetch(`https://nextspleelplein.vercel.app/api/children/${id}`)
 
   if(response.status === 200) {
     const data = await response.json()
