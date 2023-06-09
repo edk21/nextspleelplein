@@ -1,4 +1,5 @@
 import Stats from "@/model/Stats"
+import { deleteChild, getChild, updateChild } from "@/database/controler"
 
 export default async function handler(req, res) {
     const  { method, body, query: {id} } = req
