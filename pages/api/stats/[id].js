@@ -1,15 +1,39 @@
 import Stats from "@/model/Stats"
-import { deleteChild, getChild, updateChild } from "@/database/controler"
+import Child from "@/model/Child"
+
+dbConnect()
 
 export default async function handler(req, res) {
     const  { method, body, query: {id} } = req
 
     switch(method) {
         case 'GET': {
-            return getChild(req, res, id)
+            try {
+                if (id) {
+                    const child = await Stats.findById(id)
+                    return res.status(200).json(child)
+                }
+        
+                return res.status(404).json({ error: "Child not selected"})
+        
+            } catch (error) {
+                res.status(404).json({ error: "Error while fetching the single data "})
+            }
         }
         case 'PUT': {
-            return updateChild(req, res, id)
+            try {
+                const formData = req.body
+        
+                if(id && formData) {
+                    const child = await Stats.findByIdAndUpdate(id, formData)
+                    res.status(200).json(child)
+                }
+        
+                res.status(404).json({ error: "Child not selected..." })
+        
+            } catch (error) {
+                res.status(500).json({ error: "Error Updating data" })
+            }
         }
         case 'DELETE': {
             try {
