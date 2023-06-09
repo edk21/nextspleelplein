@@ -55,7 +55,7 @@ export default function CreateData() {
     const date = day + ' / ' + month + ' / ' + year;
     
     const handleChecked = (e) => {
-      console.log("e.target.checked: ", e.target.checked)
+      // console.log("e.target.checked: ", e.target.checked)
       if(e.target.checked){
         setIsChecked("checked")
         setMedical('checked')

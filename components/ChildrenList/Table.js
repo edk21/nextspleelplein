@@ -105,25 +105,25 @@ const Table = ({ data }) => {
                         <td
                             className='px-3 whitespace-nowrap text-center'
                             style={{
-                            background: child.dateOfBirth === '' ? '#dddf00' : child.dateOfBirth === null ? '#dddf00' : '',
+                            backgroundColor: child.dateOfBirth === '' ? '#dddf00' : child.dateOfBirth === null ? '#dddf00' : '',
                         }}>{child.dateOfBirth}</td>
                         <td className='px-3 whitespace-nowrap text-center' style={{
-                            background: child.school === '' ? '#dddf00' : '',
+                            backgroundColor: child.school === '' ? '#dddf00' : '',
                         }}>{child.school}</td>
                         <td className='px-3 whitespace-nowrap text-center' style={{
-                            background: child.level === '' ? '#dddf00' : '',
+                            backgroundColor: child.level === '' ? '#dddf00' : '',
                         }}>{child.level}</td>
                         <td className='px-3 whitespace-nowrap' style={{
                             background: child.street === '' ? '#dddf00' : child.street === null ? '#dddf00' : '',
                         }}>{child.street}</td>
                         <td className='px-3 whitespace-nowrap text-center' style={{
-                            background: child.postalCode === null ? '#dddf00' : child.postalCode === '' ? "#dddf00" : '',
+                            backgroundColor: child.postalCode === null ? '#dddf00' : child.postalCode === '' ? "#dddf00" : '',
                         }}>{child.postalCode}</td>
                         <td className='px-3 whitespace-nowrap' style={{
                             background: child.city === null ? '#dddf00' : child.city === "" ? '#dddf00' : "",
                         }}>{child.city}</td>
                         <td className='px-3 whitespace-nowrap' style={{
-                            background: child.contact1 === null ? '#dddf00' : child.contact1 === "" ? '#dddf00' : "",
+                            backgroundColor: child.contact1 === null ? '#dddf00' : child.contact1 === "" ? '#dddf00' : "",
                         }}>{child.contact1}</td>
                         <td className='px-3 whitespace-nowrap text-center' style={{
                             background: child.tel1 === '' ? '#dddf00' : '',
@@ -137,7 +137,7 @@ const Table = ({ data }) => {
                             background: child.parentDOB === '' ? '#dddf00' : '',
                         }}>{child.parentDOB}</td>
                         <td className='px-3 whitespace-nowrap' style={{
-                            background: child.childSSN === '' ? '#dddf00' : '',
+                            backgroundColor: child.childSSN === '' ? '#dddf00' : '',
                         }}>{child.childSSN}</td>
                         <td className='px-3 whitespace-nowrap' style={{
                             background: child.email === '' ? '#dddf00' : '',

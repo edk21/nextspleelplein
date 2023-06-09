@@ -14,6 +14,7 @@ export default async function handler(req, res) {
             try {
                 if (id) {
                     const child = await Stats.findByIdAndDelete(id)
+                    // console.log("child single :", child )
                     return res.status(200).json(child)
                 }
         

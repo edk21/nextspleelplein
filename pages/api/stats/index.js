@@ -10,6 +10,7 @@ export default async function handler(req, res) {
         case 'GET': {
             try {
                 const child = await Stats.find()
+                // console.log("child: ", child)
         
                 if (!child) return res.status(404).json({ error: "Data not found" })
                 res.status(200).json(child)
@@ -29,6 +30,7 @@ export default async function handler(req, res) {
         case 'DELETE': {
             try {        
                 const child = await Stats.deleteMany({})
+                console.log("child many :", child )
                 return res.status(200).json(child)
         
             } catch (error) {

@@ -189,7 +189,7 @@ export default function EditData({ data, error }) {
   }
 
   const createStat = async (newStat) => {
-    console.log("newStat: ", newStat)
+    // console.log("newStat: ", newStat)
     try {
       //await fetch('http://localhost:3000/api/stats', {
       await fetch('https://nextspleelplein.vercel.app/api/stats', {
@@ -746,7 +746,7 @@ export async function getServerSideProps({ query: {id} }) {
 
   if(response.status === 200) {
     const data = await response.json()
-    console.log(data)
+    // console.log(data)
 
     return {
       props: {
